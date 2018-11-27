@@ -1,0 +1,58 @@
+<!-- teamDetails.html -->
+
+<!-- all other html files must now extend index.html and not base.html -->
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+<h1>Team Details</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Team Name</th>
+            <th scope="col">Nationality</th>
+            <th scope="col">Drivers</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for d in details %}
+    <tr>
+        <td>
+            {{ d.teamName }}
+        </td>
+        <td>
+            {{ d.nationality }}
+        </td>
+        <td>
+            {% for driver in d.drivers %}
+                {{ driver }}<br>
+            {% endfor %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+<!--
+{% for d in details %}
+  <div><p>Team Name: {{ d.teamName }}<br>Nationality: {{ d.nationality }}
+  <br>Drivers:
+  {% for driver in d.drivers %}
+    <ul>
+        <li>{{ driver }}</li>
+    </ul>
+  {% endfor %}
+  </p></div>
+{% endfor %}
+-->

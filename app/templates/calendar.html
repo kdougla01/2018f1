@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    <div class="container">
+    <h1>Race Calendar</h1>
+    <table class="table w-auto">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Dates</th>
+                <th scope="col">Track Name</th>
+                <th scope="col">Country</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for d in details %}
+            <tr>
+                <th scope="row">{{ loop.index }}
+                    <td>{{ d.start_date}} - {{ d.end_date }}</td>
+                    <td>{{ d.track_name }}</td>
+                    <td>{{ d.country }}</td>
+                </th>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}
